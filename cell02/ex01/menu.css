@@ -1,0 +1,20 @@
+.food {
+    background-color: bisque;
+    width: 50px;
+    border: solid;
+    width: 50px;
+}
+.button:hover {
+    background-color: rgb(255, 136, 0);
+}
+.food:hover {
+    background-color: beige;
+}
+.list {
+    display: none;
+}
+
+.menu:hover .list {
+    display: flex;
+    flex-direction: column;
+}
