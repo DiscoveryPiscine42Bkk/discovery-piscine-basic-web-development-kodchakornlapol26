@@ -14,7 +14,7 @@ background-image {
 
 /* พื้นหลังของหน้า */
 body, html {
-    margin: 0;
+    margin: 5;
     padding: 0;
     height: 100%;
     font-family: 'Arial', sans-serif;
@@ -36,26 +36,28 @@ body {
 /* กล่องหลัก */
 .container {
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 50px;
-    border-radius: 50px;
+    background-color: rgba(246, 239, 221, 0.652);
+    padding: 70px;
+    border-radius: 100px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0);
     
 }
 
 /* ปุ่ม */
 .button-group {
-    margin-top: 20px;
+    margin-top: 30px;
+    margin: 50px;
+    
 }
 
 .btn {
     background-color: antiquewhite;
     color: rgb(110, 107, 124);
     padding: 15px 30px;
-    margin: 10px;
+    margin: 20px;
     border: none;
     border-radius: 10px;
-    font-size: 20px;
+    font-size: 50px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -63,4 +65,3 @@ body {
 .btn:hover {
     background-color: antiquewhite;
 }
-
