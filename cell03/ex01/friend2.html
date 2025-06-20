@@ -2,67 +2,131 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Me</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #f5f5f5;
+      background-color: #f4f4f4;
       display: flex;
       justify-content: center;
-      align-items: center;
-      height: 100vh;
+      padding: 40px 20px;
     }
 
     .container {
+      max-width: 1200px;
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .container:hover {
+      transform: scale(1.02);
+    }
+
+    .top-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .circle-photo {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 6px solid #ccc;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .circle-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .text-content {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .text-content h1 {
+      font-size: 60px;
+      margin: 0;
+      color: #333;
+    }
+
+    .text-content h2 {
+      font-size: 22px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+    .text-content p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #483f3f;
+    }
+
+    /* Contact section below text */
+    .contact-info {
+      margin-top: 20px;
       display: flex;
       flex-direction: column;
+      gap: 10px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .contact-info i {
+      margin-right: 8px;
+      color: #666;
+    }
+
+    .contact-item {
+      display: flex;
       align-items: center;
-      text-align: center;
-      max-width: 1000px;
-      padding: 20px;
     }
 
-    .image-row {
-      display: flex;
-      gap: 40px;
-      margin-bottom: 30px;
-      justify-content: center;
+    .square-image {
+      margin: 40px 0;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
     }
 
-    .circle-img {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
+    .square-image img {
+      display: block;
+      margin: auto;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      border: 6px solid #ccc;
     }
 
-    h1 {
-      font-size: 3em;
-      margin: 10px 0;
-    }
-
-    .about {
-      max-width: 600px;
-      margin-bottom: 30px;
-    }
-
-    .about h2 {
-      font-size: 1.5em;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .buttons {
+    .button-row {
       display: flex;
-      gap: 30px;
       justify-content: center;
+      gap: 50px;
       flex-wrap: wrap;
+      margin-top: 20px;
     }
 
-    .btn {
+    .button {
       width: 120px;
       height: 120px;
       border-radius: 50%;
@@ -70,44 +134,91 @@
       align-items: center;
       justify-content: center;
       font-weight: bold;
-      font-size: 1.1em;
+      font-size: 16px;
       cursor: pointer;
       border: none;
-      transition: transform 0.3s ease;
+      color: rgb(255, 255, 255);
+      transition: transform 0.2s, background-color 0.3s;
     }
 
-    .btn:hover {
+    .button:hover {
       transform: scale(1.1);
     }
 
-    .resume { background-color: #f4aa00; }
-    .projects { background-color: #ff3b30; color: white; }
-    .contact { background-color: #73e6e6; }
+    .resume { background-color: #d9c49c; }
+    .projects { background-color: #f3aca8; color: white; }
+    .contact { background-color: #79e2e2; }
+
+    @media (max-width: 768px) {
+      .top-section {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .text-content h1 {
+        font-size: 40px;
+        text-align: center;
+      }
+
+      .text-content p {
+        text-align: center;
+      }
+
+      .square-image {
+        height: 300px;
+      }
+
+      .button {
+        width: 100px;
+        height: 100px;
+      }
+
+      .contact-info {
+        align-items: center;
+      }
+    }
   </style>
 </head>
 <body>
+
   <div class="container">
-    <div class="image-row">
-      <img src="https://via.placeholder.com/220" alt="Person 1" class="circle-img" />
-      <img src="https://via.placeholder.com/220" alt="Person 2" class="circle-img" />
+
+    
+    <div class="top-section">
+      <div class="circle-photo">
+        <img src="IMG_4245.webp" alt="Profile" />
+      </div>
+
+      <div class="text-content">
+        <h1>Kodchakorn</h1>
+        <div class="contact-info">
+          <div class="contact-item">
+            <a href="https://discord.com/channels/@me/1384398997116030976/1385471577302499328" target="_blank">
+              <img class="instagram-icon" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 24px; height: 24px; margin-right: 8px;">
+            </a>
+            Kodchakorn
+          </div> 
+        <h2>หลักสูตรครุศาสตร์อุตสาหกรรมและเทคโนโลยี</h2>
+        <p>
+          ครุศาสตร์อุตสาหกรรมและเทคโนโลยีเดิมชื่อ คณะครุศาสตร์อุตสาหกรรมและวิทยาศาสตร์
+          จัดตั้งขึ้นเมื่อวันที่ 10 พฤศจิกายน 2520 เพื่อให้สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบังเป็นศูนย์การศึกษา 
+          ทำหน้าที่ผลิตครูอาชีวศึกษาสำหรับวิทยาลัยเทคนิคและอาชีวศึกษาต่าง ๆให้การศึกษา ค้นคว้าวิจัยทางวิทยาศาสตร์และทำหน้าที่
+          การจัดการเรียนการสอนวิชาพื้นฐานทั่วไปตามหลักสูตรระดับปริญญาตรีให้กับคณะต่าง ๆ ในสถาบัน ฯ
+        </p>
+      </div>
     </div>
 
-    <h1>Hello</h1>
-
-    <div class="about">
-      <h2>A Bit About Me</h2>
-      <p>
-        I'm a paragraph. Click here to add your own text and edit me.
-        I’m a great place for you to tell a story and let your users
-        know a little more about you.
-      </p>
+    <div class="square-image">
+      <img height="600" width="400" src="https://i.ytimg.com/vi/5N78z0yE4_M/maxresdefault.jpg" alt="Second Image" />
     </div>
 
-    <div class="buttons">
-      <button class="btn resume">Resume</button>
-      <button class="btn projects">Projects</button>
-      <button class="btn contact">Contact</button>
+    <div class="button-row">
+      <a href="index.html"><button class="button resume">Home</button></a>
+      <a href="friend1.html"><button class="button projects">Toony</button></a>
+      <a href="friend2.html"><button class="button contact">Noon</button></a>
     </div>
+
   </div>
+
 </body>
 </html>
